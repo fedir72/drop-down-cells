@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		5C579BA73EE38CD180540195 /* Pods_ExpandableCollectionViewCell.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 138422443368F203B00F5EF7 /* Pods_ExpandableCollectionViewCell.framework */; };
+		BDBFC3AA281B12920042C2F6 /* SecondCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDBFC3A9281B12920042C2F6 /* SecondCell.swift */; };
 		BDCAA02C28187D0E00363547 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDCAA02B28187D0E00363547 /* AppDelegate.swift */; };
 		BDCAA02E28187D0E00363547 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDCAA02D28187D0E00363547 /* SceneDelegate.swift */; };
 		BDCAA03028187D0E00363547 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDCAA02F28187D0E00363547 /* ViewController.swift */; };
@@ -21,6 +22,7 @@
 		138422443368F203B00F5EF7 /* Pods_ExpandableCollectionViewCell.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ExpandableCollectionViewCell.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		3727249BE1E0B5AC42520F0C /* Pods-ExpandableCollectionViewCell.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ExpandableCollectionViewCell.debug.xcconfig"; path = "Target Support Files/Pods-ExpandableCollectionViewCell/Pods-ExpandableCollectionViewCell.debug.xcconfig"; sourceTree = "<group>"; };
 		8287886B0656F39ACE5C4598 /* Pods-ExpandableCollectionViewCell.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ExpandableCollectionViewCell.release.xcconfig"; path = "Target Support Files/Pods-ExpandableCollectionViewCell/Pods-ExpandableCollectionViewCell.release.xcconfig"; sourceTree = "<group>"; };
+		BDBFC3A9281B12920042C2F6 /* SecondCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SecondCell.swift; sourceTree = "<group>"; };
 		BDCAA02828187D0E00363547 /* ExpandableCollectionViewCell.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ExpandableCollectionViewCell.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		BDCAA02B28187D0E00363547 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		BDCAA02D28187D0E00363547 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -50,7 +52,6 @@
 				3727249BE1E0B5AC42520F0C /* Pods-ExpandableCollectionViewCell.debug.xcconfig */,
 				8287886B0656F39ACE5C4598 /* Pods-ExpandableCollectionViewCell.release.xcconfig */,
 			);
-			name = Pods;
 			path = Pods;
 			sourceTree = "<group>";
 		};
@@ -99,6 +100,7 @@
 			isa = PBXGroup;
 			children = (
 				BDCAA04028187D6A00363547 /* FirstCell.swift */,
+				BDBFC3A9281B12920042C2F6 /* SecondCell.swift */,
 			);
 			path = Cells;
 			sourceTree = "<group>";
@@ -221,6 +223,7 @@
 				BDCAA03028187D0E00363547 /* ViewController.swift in Sources */,
 				BDCAA02C28187D0E00363547 /* AppDelegate.swift in Sources */,
 				BDCAA04128187D6A00363547 /* FirstCell.swift in Sources */,
+				BDBFC3AA281B12920042C2F6 /* SecondCell.swift in Sources */,
 				BDCAA02E28187D0E00363547 /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

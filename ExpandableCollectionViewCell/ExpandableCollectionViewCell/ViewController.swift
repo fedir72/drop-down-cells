@@ -24,8 +24,8 @@ class ViewController: UIViewController {
         title = "Главная"
         collectionView.delegate = self
         collectionView.dataSource = self
-        collectionView.register(FirstCell.self,
-                                forCellWithReuseIdentifier: FirstCell.id)
+        collectionView.register(SecondCell.self,
+                                forCellWithReuseIdentifier: SecondCell.id)
         view.addSubview(collectionView)
     }
     
@@ -42,7 +42,7 @@ extension ViewController: UICollectionViewDataSource {
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: FirstCell.id, for: indexPath) as! FirstCell
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: SecondCell.id, for: indexPath) as! SecondCell
         return cell
     }
     
@@ -60,6 +60,22 @@ extension ViewController: UICollectionViewDelegate {
     func collectionView(_ collectionView: UICollectionView, shouldSelectItemAt indexPath: IndexPath) -> Bool {
         collectionView.selectItem(at: indexPath, animated: true, scrollPosition: [])
         collectionView.performBatchUpdates(nil)
+        
+        //скроллим ячейку чтобы ее было полностью видно и добавляем 20 поинтов
+        DispatchQueue.main.async {
+//            guard let attributes = collectionView.collectionViewLayout.layoutAttributesForItem(at: indexPath) else {
+//                return
+//            }
+//            let desiredOffset = attributes.frame.origin.y - 20
+//            let contentHeight = collectionView.collectionViewLayout.collectionViewContentSize.height
+//            let maxPossibleOffset = contentHeight - collectionView.bounds.height
+//            let finalOffset = max(min(desiredOffset, maxPossibleOffset), 0)
+//
+//            collectionView.setContentOffset(CGPoint(x: 0, y: finalOffset), animated: true)
+            
+            //MARK: -  we can do it easyer but not will be inset and 20 pixels above(for beauty)
+            collectionView.scrollToItem(at: indexPath, at: .top, animated: true)
+        }
         return true
     }
 }
@@ -72,10 +88,10 @@ extension ViewController: UICollectionViewDelegateFlowLayout {
     }
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, insetForSectionAt section: Int) -> UIEdgeInsets {
-        return UIEdgeInsets(top: 5, left: 5, bottom: 5, right: 5)
+        return UIEdgeInsets(top: 10, left: 5, bottom: 10, right: 5)
     }
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumLineSpacingForSectionAt section: Int) -> CGFloat {
-        5
+        10
     }
 }

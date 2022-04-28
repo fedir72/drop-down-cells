@@ -1,16 +1,17 @@
 //
-//  FirstCell.swift
+//  SecondCell.swift
 //  ExpandableCollectionViewCell
 //
-//  Created by Fedii Ihor on 26.04.2022.
+//  Created by Fedii Ihor on 28.04.2022.
 //
 
-import UIKit
+import Foundation
 import SnapKit
+import UIKit
 
-class FirstCell: UICollectionViewCell {
+class SecondCell: UICollectionViewCell {
     
-    static let id = "FirstCell"
+    static let id = "SecondCell"
     
     //переопределяем  isSelected чтобы на каждое изменение вывывать updateAppearence()
     override var isSelected: Bool {
@@ -25,8 +26,17 @@ class FirstCell: UICollectionViewCell {
     private var collepsedConstraint: Constraint!
     
     //MARK: - subviews
-    private lazy var mainContainer = UIView()
-    private lazy var topContainer = UIView()
+    private lazy var mainContainer: UIView = {
+        let view = UIView()
+        view.backgroundColor = .systemBlue
+        return view
+    }()
+    
+    private lazy var topContainer: UIView = {
+        let view = UIView()
+        view.backgroundColor = .systemRed
+        return view    }()
+    
     private lazy var bottomContainer = UIView()
     private lazy var arrowImageView: UIImageView = {
         let imageView = UIImageView(image: UIImage(systemName: "arrow.down")?.withRenderingMode(.alwaysTemplate))
@@ -60,10 +70,6 @@ class FirstCell: UICollectionViewCell {
     }
     
     private func configureView() {
-        
-        topContainer.backgroundColor = UIColor.systemYellow
-        bottomContainer.backgroundColor = UIColor.systemGreen
-        
         //cornerradius put on contentview
         contentView.layer.cornerRadius = 10
         contentView.clipsToBounds = true
@@ -93,8 +99,8 @@ class FirstCell: UICollectionViewCell {
         }
         
         //MARK: - constraint for collapsed state of cell
-        bottomContainer.snp.prepareConstraints{ make in
-            collepsedConstraint = make.height.equalTo(0).constraint
+        topContainer.snp.prepareConstraints{ make in
+            collepsedConstraint = make.bottom.equalToSuperview().constraint
             collepsedConstraint.layoutConstraints.first?.priority = .defaultLow
         }
         
@@ -109,12 +115,12 @@ class FirstCell: UICollectionViewCell {
         bottomContainer.snp.makeConstraints { make in
             make.top.equalTo(topContainer.snp.bottom)
             make.left.right.equalToSuperview()
-            make.height.equalTo(0)
+            make.height.equalTo(100)
         }
         
         //MARK: - container for expanded state of cell
         bottomContainer.snp.makeConstraints { make in
-            expandedConstraint = make.height.equalTo(150).constraint
+            expandedConstraint = make.bottom.equalToSuperview().constraint
             expandedConstraint.layoutConstraints.first?.priority = .defaultLow
         }
     }
